@@ -601,22 +601,10 @@ def internal_server_error(error):
 # Run Application
 # ==========================================================
 
+import os
+
 if __name__ == "__main__":
-
-    print()
-
-    print("=" * 70)
-
-    print("AI Resume Screening System Started")
-
-    print("URL : http://127.0.0.1:5000")
-
-    print("=" * 70)
-
-    print()
-
     app.run(
-
-        debug=True
-
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 5000))
     )
